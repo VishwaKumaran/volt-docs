@@ -19,16 +19,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: "20"
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: npm install
+        run: bun install
 
       - name: Compile TypeScript
-        run: npx tsc --project tsconfig.scripts.json
+        run: bunx tsc --project tsconfig.scripts.json
 
       - name: Rename .js files to .mjs
         run: |
@@ -53,4 +51,4 @@ jobs:
           done
 
       - name: Run content script
-        run: node dist/scripts/scripts/content.mjs
+        run: bun dist/scripts/scripts/content.mjs
