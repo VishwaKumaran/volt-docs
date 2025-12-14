@@ -1,0 +1,29 @@
+---
+title: Project Structure
+description: Understanding the file layout of a Volt project.
+---
+
+A typical Volt-generated FastAPI project follows a modular and scalable structure.
+
+```plaintext
+my-project/
+├── app/
+│   ├── api/            # API route handlers (endpoints)
+│   ├── core/           # Core config, security settings
+│   ├── models/         # Database models (Pydantic/SQLAlchemy)
+│   ├── schemas/        # Pydantic schemas for request/response
+│   ├── services/       # Business logic layer
+│   └── main.py         # App entry point
+├── tests/              # Pytest test suite
+├── .env                # Environment variables
+├── pyproject.toml      # Dependency & tool configuration
+└── README.md
+```
+
+## Description
+
+-   **app/**: Contains all source code.
+-   **api/**: Routes are split into modules (e.g., `users.py`, `items.py`) and aggregated in a router.
+-   **core/**: Central configuration using Pydantic Settings.
+-   **tests/**: Mirror the `app` structure for unit and integration testing.
+-   **pyproject.toml**: The single source of truth for dependencies and tool settings (Ruff, Pytest, etc.).

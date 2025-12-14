@@ -1,0 +1,113 @@
+---
+title: Installation
+description: This guide explains how to install Volt and prepare your environment to generate new Python project templates.
+---
+
+<Step>
+<StepItem title="Requirements">
+
+Make sure you have the following installed:
+
+-   **Python 3.10+**
+-   **uv**
+
+Check your versions:
+
+```bash
+python --version
+uv --version
+```
+
+If `uv` is not installed:
+
+```bash
+pip install uv
+```
+
+Or using the official installer:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+For comprehensive installation options (Windows, Homebrew, etc.), refer to the [official uv installation guide](https://docs.astral.sh/uv/getting-started/installation/).
+
+</StepItem>
+<StepItem title="Install Volt">
+
+Choose one of the following methods to install Volt:
+
+### Shell Installer (Recommended)
+
+Volt provides a simple shell installer that downloads and installs the latest version automatically.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/VishwaKumaran/volt/refs/heads/main/install.sh | bash
+```
+
+This installs Volt globally and makes the `volt` command available in your `PATH`.
+
+### Homebrew (macOS/Linux)
+
+You can install Volt using Homebrew via the official tap:
+
+```bash
+brew tap VishwaKumaran/volt
+brew install volt
+```
+
+### Using uv
+
+```bash
+uv tool install volt-cli
+```
+
+### Using pip
+
+```bash
+pip install volt-cli
+```
+
+</StepItem>
+<StepItem title="Verify Installation">
+
+Verify that Volt is correctly installed and available in your path:
+
+```bash
+volt --help
+```
+
+You should see the list of available commands.
+
+</StepItem>
+</Step>
+
+## Upgrade Volt
+
+If you already have Volt installed, upgrade to the latest version.
+
+### With uv
+
+```bash
+uv tool upgrade volt-cli
+```
+
+### With pip
+
+```bash
+pip install --upgrade volt-cli
+```
+
+## Uninstall Volt
+
+Remove the tool if needed:
+
+```bash
+uv tool uninstall volt-cli
+```
+
+or
+
+```bash
+pip uninstall volt-cli
+```

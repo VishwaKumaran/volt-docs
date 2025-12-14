@@ -1,0 +1,32 @@
+---
+title: .env Files
+description: Managing environment variables with .env files.
+---
+
+Your project comes with a sample `.env.example` file. You should copy this to `.env` and fill in your local secrets.
+
+```bash
+cp .env.example .env
+```
+
+## Security Warning
+
+**NEVER** commit your `.env` file to version control. It is already added to `.gitignore` by default.
+
+## Loading Variables
+
+Volt projects use `pydantic-settings` to automatically load these variables.
+
+```python
+# app/core/config.py
+from pydantic_settings import BaseSettings
+
+class Settings(BaseSettings):
+    DATABASE_URL: str
+    SECRET_KEY: str
+
+    class Config:
+        env_file = ".env"
+
+settings = Settings()
+```

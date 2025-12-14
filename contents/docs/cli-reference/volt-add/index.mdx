@@ -1,0 +1,31 @@
+---
+title: volt add
+description: Reference for the volt add command.
+---
+
+# `volt add`
+
+The `volt add` command allows you to add features, integrations, or components to an existing Volt project.
+
+## Usage
+
+```bash
+volt add [FEATURE]
+```
+
+## Arguments
+
+-   `[FEATURE]`: The name of the feature to add (e.g., `auth`, `docker`, `github-actions`).
+
+## Supported Features
+
+-   **auth**: Adds authentication boilerplate (JWT/OAuth2).
+-   **docker**: Adds `Dockerfile` and `docker-compose.yml`.
+-   **ci**: Adds GitHub Actions workflows for testing and linting.
+
+## Example
+
+```bash
+cd my-volt-project
+volt add auth
+```

@@ -1,0 +1,12 @@
+---
+title: Configuration
+description: How to configure your Volt project and environment.
+---
+
+Volt projects are designed to be 12-factor app compliant, meaning all configuration is stored in the environment.
+
+## Key Configuration Files
+
+-   **`.env`**: Local environment variables (secrets, DB credentials).
+-   **`pyproject.toml`**: Project metadata, dependencies, and tool settings (Ruff, Pytest).
+-   **`volt.toml`**: (Optional) Volt-specific template settings if you need to override defaults.

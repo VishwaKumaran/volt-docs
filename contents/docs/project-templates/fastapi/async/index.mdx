@@ -1,0 +1,34 @@
+---
+title: Async Patterns
+description: Leveraging asynchronous programming in Volt projects.
+---
+
+Volt's FastAPI stack is configured to support asynchronous programming out of the box, allowing your API to handle thousands of concurrent connections efficiently.
+
+## Async Endpoints
+
+Define your route handlers with `async def`:
+
+```python
+@router.get("/users/{user_id}")
+async def get_user(user_id: int):
+    user = await user_service.get(user_id)
+    return user
+```
+
+## Database Operations
+
+If you select an async database driver (like `asyncpg` for PostgreSQL), all database interactions will be non-blocking.
+
+```python
+# Create
+new_user = await db.create_user(user_data)
+
+# Query
+users = await db.select_all_users()
+```
+
+## When to use `def` vs `async def`
+
+-   **Use `async def`**: For I/O bound operations (DB queries, external API calls, file reading).
+-   **Use `def`**: For CPU bound operations or blocking libraries. FastAPI runs these in a separate thread pool to prevent blocking the event loop.

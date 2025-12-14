@@ -1,0 +1,25 @@
+---
+title: Authentication
+description: Adding authentication to your Volt project.
+---
+
+Authentication is a critical part of most applications. Volt can scaffold a robust authentication system for you.
+
+## Features (Optional)
+
+You can add auth features using `volt add auth`. This includes:
+
+-   **User Models**: Database tables for users.
+-   **Password Hashing**: Secure hashing with bcrypt or Argon2.
+-   **JWT Tokens**: Stateless authentication using JSON Web Tokens.
+-   **OAuth2**: Login flows (e.g., "Login with Google") compatible with FastAPI security utilities.
+
+## Usage
+
+Simply run:
+
+```bash
+volt add auth
+```
+
+This will inject the necessary models, schemas, and API routes (`/auth/login`, `/auth/register`) into your project.

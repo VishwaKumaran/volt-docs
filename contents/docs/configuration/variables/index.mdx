@@ -1,0 +1,22 @@
+---
+title: Environment Variables
+description: Reference of environment variables used by Volt projects.
+---
+
+These are the common environment variables used in a Volt-generated project.
+
+## Core
+
+-   `APP_ENV`: The environment the app is running in (`development`, `production`, `testing`).
+-   `SECRET_KEY`: A long, random string used for cryptographic signing.
+-   `DEBUG`: `True` or `False`. Should be `False` in production.
+
+## Database
+
+-   `DATABASE_URL`: Connection string for the database.
+    -   Example: `postgresql+asyncpg://user:pass@localhost/dbname`
+
+## CORS
+
+-   `BACKEND_CORS_ORIGINS`: Comma-separated list of allowed origins.
+    -   Example: `http://localhost:3000,https://myapp.com`

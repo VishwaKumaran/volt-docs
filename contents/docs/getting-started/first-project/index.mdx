@@ -1,0 +1,52 @@
+---
+title: Creating Your First Project
+description: Learn how to generate a new Python project using Volt.
+---
+
+Once Volt is installed, creating a new project is simple. Volt provides an interactive CLI to guide you through the process.
+
+## Command
+
+To create a new FastAPI project, run:
+
+```bash
+volt fastapi create my-app
+```
+
+This will launch the interactive wizard.
+
+### Step-by-Step Guide
+
+1.  **Database**: Choose your database backend.
+    -   **Options**: `None`, `SQLite`, `PostgreSQL`, `MySQL`, `MongoDB`.
+    
+<Note>
+If you select `None`, Volt will generate a basic application structure without database support, and the setup will finish here.
+</Note>
+
+2.  **Authentication**: (Only appears if a database is selected)
+    -   **Options**:
+        -   `None`
+        -   `Bearer Token` (Authorization Header)
+        -   `Cookie-based` (HTTPOnly)
+
+Volt will then:
+-   Create the project directory.
+-   Set up the virtual environment.
+-   Install all dependencies.
+
+## What's Next?
+
+Navigate into your project folder:
+
+```bash
+cd my-app
+```
+
+And start the development server:
+
+```bash
+uv run uvicorn app.main:app
+```
+
+Your API is now running at `http://localhost:8000`.

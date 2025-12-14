@@ -1,0 +1,37 @@
+---
+title: volt fastapi
+description: Reference for the volt fastapi command.
+---
+
+# `volt fastapi`
+
+The `volt fastapi` command is the primary entry point for managing FastAPI applications.
+
+## Subcommands
+
+### create
+
+Generate a new FastAPI project.
+
+#### Usage
+
+```bash
+volt fastapi create [PROJECT_NAME]
+```
+
+#### Arguments
+
+-   `[PROJECT_NAME]` (Optional): The name of your project. If not provided, the interactive wizard will prompt you for it.
+
+#### Example
+
+```bash
+# Interactive mode
+volt fastapi create
+
+# Create with specific name
+volt fastapi create my-api
+
+# Direct mode (future support)
+volt fastapi create my-app --database postgres
+```

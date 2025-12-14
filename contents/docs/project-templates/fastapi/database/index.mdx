@@ -1,0 +1,21 @@
+---
+title: Database Options
+description: Setting up databases in your Volt project.
+---
+
+Volt supports multiple database backends, configured via SQLAlchemy (Async).
+
+## Supported Databases
+
+-   **PostgreSQL**: (Recommended) Production standard for relational data.
+-   **SQLite**: Great for prototyping and small-scale apps.
+-   **MySQL**: Supported via `aiomysql`.
+-   **MongoDB**: Supported via `aiomongo`.
+
+## Configuration
+
+The database connection string is set in your `.env` file:
+
+```ini
+DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/dbname
+```
