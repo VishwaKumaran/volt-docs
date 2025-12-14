@@ -77,7 +77,7 @@
     "@types/bun": "latest"
   },
   "engines": {
-    "node": "22.x"
+    "node": "25.x"
   },
   "packageManager": "bun@1.2.16"
 }
