@@ -1,0 +1,69 @@
+---
+title: volt db
+description: Reference for the volt db command group for database migrations.
+---
+
+# `volt db`
+
+The `volt db` command group provides a wrapper around Alembic to manage database migrations within your Volt project.
+
+## Subcommands
+
+### revision
+
+Create a new migration revision.
+
+**Usage:**
+```bash
+volt db revision -m "description"
+```
+
+**Options:**
+- `-m`, `--message`: Message for the migration revision.
+
+---
+
+### upgrade
+
+Upgrade the database to a specific revision.
+
+**Usage:**
+```bash
+# Upgrade to latest
+volt db upgrade
+
+# Upgrade to specific revision
+volt db upgrade [REVISION]
+```
+
+**Arguments:**
+- `[REVISION]` (Optional): The revision ID to upgrade to. Defaults to `head`.
+
+---
+
+### downgrade
+
+Downgrade the database to a specific revision.
+
+**Usage:**
+```bash
+# Downgrade one step
+volt db downgrade
+
+# Downgrade to specific revision
+volt db downgrade [REVISION]
+```
+
+**Arguments:**
+- `[REVISION]` (Optional): The revision ID to downgrade to. Defaults to `-1`.
+
+---
+
+### history
+
+Show migration history.
+
+**Usage:**
+```bash
+volt db history
+```

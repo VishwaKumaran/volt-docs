@@ -11,7 +11,7 @@ The `volt fastapi` command is the primary entry point for managing FastAPI appli
 
 ### create
 
-Generate a new FastAPI project.
+Generate a new FastAPI project with options for production-ready features.
 
 #### Usage
 
@@ -23,15 +23,16 @@ volt fastapi create [PROJECT_NAME]
 
 -   `[PROJECT_NAME]` (Optional): The name of your project. If not provided, the interactive wizard will prompt you for it.
 
+#### Interactive Options
+
+The creation wizard will prompt you for the following optional features:
+-   **Database**: Choose from SQLite, PostgreSQL, or MySQL.
+-   **Alembic**: Set up database migrations.
+-   **Redis Support**: Include Redis client and lifecycle hooks.
+-   **Observability**: Choose from Sentry or Logfire.
+
 #### Example
 
 ```bash
-# Interactive mode
 volt fastapi create
-
-# Create with specific name
-volt fastapi create my-api
-
-# Direct mode (future support)
-volt fastapi create my-app --database postgres
 ```

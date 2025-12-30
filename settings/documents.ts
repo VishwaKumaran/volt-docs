@@ -36,8 +36,24 @@ export const Documents: Paths[] = [
         href: "/volt-fastapi",
       },
       {
+        title: "volt generate",
+        href: "/volt-generate",
+      },
+      {
         title: "volt add",
         href: "/volt-add",
+      },
+      {
+        title: "volt db",
+        href: "/volt-db",
+      },
+      {
+        title: "volt build",
+        href: "/volt-build",
+      },
+      {
+        title: "volt up",
+        href: "/volt-up",
       },
     ],
   },

@@ -3,12 +3,14 @@ title: Installation
 description: This guide explains how to install Volt and prepare your environment to generate new Python project templates.
 ---
 
+## Installation steps
+
 <Step>
 <StepItem title="Requirements">
 
 Make sure you have the following installed:
 
--   **Python 3.10+**
+-   **Python 3.13+**
 -   **uv**
 
 Check your versions:
@@ -91,14 +93,42 @@ pip install --upgrade volt-cli
 
 ## Uninstall Volt
 
-Remove the tool if needed:
+Select the uninstallation method based on how you installed Volt:
 
-```bash
-uv tool uninstall volt-cli
-```
-
-or
-
-```bash
-pip uninstall volt-cli
-```
+<Tabs defaultValue="uv" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="uv">uv</TabsTrigger>
+    <TabsTrigger value="pip">pip</TabsTrigger>
+    <TabsTrigger value="macos">macOS</TabsTrigger>
+    <TabsTrigger value="linux">Linux</TabsTrigger>
+    <TabsTrigger value="windows">Windows</TabsTrigger>
+  </TabsList>
+  <TabsContent value="uv">
+    ```bash
+    uv tool uninstall volt-cli
+    ```
+  </TabsContent>
+  <TabsContent value="pip">
+    ```bash
+    pip uninstall volt-cli
+    ```
+  </TabsContent>
+  <TabsContent value="macos">
+    Manually remove the binary from your local bin directory:
+    ```bash
+    rm ~/.local/bin/volt
+    ```
+  </TabsContent>
+  <TabsContent value="linux">
+    Manually remove the binary from your local bin directory:
+    ```bash
+    rm ~/.local/bin/volt
+    ```
+  </TabsContent>
+  <TabsContent value="windows">
+    Manually remove the binary from your local bin directory:
+    ```bash
+    rm ~/.local/bin/volt
+    ```
+  </TabsContent>
+</Tabs>

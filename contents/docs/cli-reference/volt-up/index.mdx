@@ -1,0 +1,33 @@
+---
+title: volt up
+description: Reference for the volt up command.
+---
+
+# `volt up`
+
+<Note title="Requirements">
+The `volt up` command utilizes **Docker Compose**. Ensure that both **Docker** and **Docker Compose** are installed and running on your system.
+</Note>
+
+The `volt up` command starts the project services using Docker Compose. It ensures that the necessary containers are built and started according to the project's configuration.
+
+## Usage
+
+```bash
+volt up [OPTIONS]
+```
+
+## Options
+
+| Option | Shorthand | Description | Default |
+| :--- | :--- | :--- | :--- |
+| `--path` | `-p` | Path to the project. | `.` |
+| `--detach` | `-d` | Run containers in the background. | `False` |
+| `--help` | | Show this message and exit. | |
+
+## Example
+
+```bash
+# Start services in the background
+volt up -d
+```

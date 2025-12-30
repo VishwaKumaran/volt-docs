@@ -1,0 +1,35 @@
+---
+title: volt build
+description: Reference for the volt build command.
+---
+
+# `volt build`
+
+<Note title="Requirements">
+The `volt build` command utilizes `docker buildx`. Ensure that both **Docker** and the **Docker Buildx** plugin are installed and running on your system.
+</Note>
+
+
+The `volt build` command builds project artifacts, primarily focusing on Docker images and other environment-specific requirements.
+If no `Dockerfile` is found in the project directory, `volt build` will automatically attempt to generate one based on the configuration of your project template.
+
+## Usage
+
+```bash
+volt build [OPTIONS]
+```
+
+## Options
+
+| Option | Shorthand | Description | Default |
+| :--- | :--- | :--- | :--- |
+| `--path` | `-p` | Path to the project. | `.` |
+| `--platform` | | Target platform for the build (e.g., `linux/amd64`, `linux/arm64`). | |
+| `--help` | | Show this message and exit. | |
+
+## Example
+
+```bash
+# Build for a specific platform
+volt build --platform linux/amd64
+```

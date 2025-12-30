@@ -22,11 +22,14 @@ Volt projects use `pydantic-settings` to automatically load these variables.
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_ignore_empty=True,
+        extra="ignore",
+    )
+    
     DATABASE_URL: str
     SECRET_KEY: str
-
-    class Config:
-        env_file = ".env"
 
 settings = Settings()
 ```

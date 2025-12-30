@@ -7,21 +7,35 @@ description: Reference for the volt add command.
 
 The `volt add` command allows you to add features, integrations, or components to an existing Volt project.
 
-## Usage
+## Subcommands
 
+### db
+
+Add database support to the project.
+
+#### Usage
 ```bash
-volt add [FEATURE]
+volt add db
 ```
 
-## Arguments
+Supported databases: SQLite, PostgreSQL, MySQL, and MongoDB and more.
 
--   `[FEATURE]`: The name of the feature to add (e.g., `auth`, `docker`, `github-actions`).
+---
 
-## Supported Features
+### auth
 
--   **auth**: Adds authentication boilerplate (JWT/OAuth2).
--   **docker**: Adds `Dockerfile` and `docker-compose.yml`.
--   **ci**: Adds GitHub Actions workflows for testing and linting.
+Add authentication boilerplate to the project.
+
+#### Usage
+```bash
+volt add auth
+```
+
+Supported methods: Bearer Token (Authorization Header) or Cookie-based (HTTPOnly).
+
+<Note title="Important">
+Authentication requires a database features to be added first. Run `volt add db` if you haven't already.
+</Note>
 
 ## Example
 

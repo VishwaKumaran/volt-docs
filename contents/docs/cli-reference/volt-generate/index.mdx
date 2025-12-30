@@ -1,0 +1,50 @@
+---
+title: volt generate
+description: Reference for the volt generate command group for code scaffolding.
+---
+
+# `volt generate`
+
+The `volt generate` command group allows you to scaffold code components like CRUD operations, models, and schemas directly into your existing Volt project.
+
+## Subcommands
+
+### crud
+
+Generate a full CRUD boilerplate for a given model name.
+
+#### Usage
+
+```bash
+volt generate crud [MODEL_NAME]
+```
+
+#### Arguments
+
+-   `[MODEL_NAME]`: The name of the model (e.g., `User`, `ProductItem`).
+
+#### What it generates
+
+Running this command will create the following files in your FastAPI project:
+
+1.  **Model**: `app/models/[model_name].py` - A standard SQLModel definition.
+2.  **Schema**: `app/schemas/[model_name].py` - Pydantic schemas for Create, Read, and Update operations.
+3.  **Repository**: `app/repositories/[model_name].py` - Repository-style functions for database operations.
+4.  **Service**: `app/services/[model_name].py` - Business logic layer.
+5.  **Router**: `app/routers/[model_plural]/routes.py` - FastAPI endpoints for the resource.
+
+#### Automatic Registration
+
+The generated router is automatically registered in `app/routers/main.py` with:
+-   A prefix based on the pluralized model name (e.g., `/items`).
+-   Automatic tags for Swagger documentation.
+
+---
+
+<Note title="Alembic">
+  After generating a new CRUD resource, if you are using Alembic, remember to run:
+  ```bash
+  volt db revision --autogenerate -m "Add [MODEL_NAME] model"
+  volt db upgrade head
+  ```
+</Note>
